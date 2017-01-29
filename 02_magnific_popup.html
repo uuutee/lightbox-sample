@@ -1,0 +1,248 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>lightbox samples</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<style>body{padding: 70px 0 120px;}</style>
+
+<!-- magnific-popup-->
+<script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="lib/Magnific-Popup/dist/jquery.magnific-popup.js"></script>
+<link rel="stylesheet" href="lib/Magnific-Popup/dist/magnific-popup.css" />
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$('.lightbox').magnificPopup({
+		type: 'image',
+		closeOnContentClick: true,
+		image: {
+			verticalFit: false
+		}
+	});
+	$('.lightbox-caption').magnificPopup({
+		type: 'image',
+		closeOnContentClick: true,
+		image: {
+			verticalFit: false
+		}
+	});
+	$('#gallery .row').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			// titleに一括で追加タグ指定可能
+			// titleSrc: function(item) {
+			// 	return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+			// }
+		}
+	});
+	$('.lightbox-youtube').magnificPopup({
+		disableOn: 700,
+		type: 'iframe',
+		removalDelay: 160,
+		preloader: false,
+		fixedContentPos: true // trueにしないと下にずれる
+	});
+	$('.lightbox-googlemap').magnificPopup({
+		disableOn: 700,
+		type: 'iframe',
+		removalDelay: 160,
+		preloader: false,
+		fixedContentPos: true // trueにしないと下にずれる
+	});
+	$('.lightbox-inline').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		modal: true
+	});
+	$(document).on('click', '.modal-close', function(e) {
+		e.preventDefault();
+		$.magnificPopup.close();
+	});
+});
+</script>
+</head>
+<body>
+	<header id="header">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">					
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">lightbox samples</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="example-navbar-collapse-1">
+					
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+	</header>
+
+	<main id="main">
+		<div class="container">
+			<h1>Magnific Popup</h1>
+
+			<section id="memo">
+				<h2>official</h2>
+				<ul>
+					<li><a href="http://dimsemenov.com/plugins/magnific-popup/">Magnific Popup: Responsive jQuery Lightbox Plugin</a></li>
+				</ul>
+				<h2>memo</h2>
+				<ul>
+					<li>windowをはみでた画像はリサイズされず、スクロールする</li>
+					<li>グルーピングは親要素のclassを指定する</li>
+					<li>全体的に設定が複雑なので、動きごとに個別のjs指定が必要</li>
+					<li>アニメーションがしょぼい</li>
+					<li>googlemapはiframeのsrcを指定する</li>
+					<li>inlineがなぜか左寄り</li>
+					<li>inlineはcloseボタンを設置しないと閉じられない</li>
+				</ul>
+			</section>
+
+			<section id="normal">
+				<h2>normal</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a class="lightbox" href="http://placehold.it/1200x1200/cccccc/666.jpg">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg">
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="caption">
+				<h2>caption</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a class="lightbox-caption" href="http://placehold.it/500x500/cccccc/666.jpg" title="captionが入ります">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg">
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="gallery">
+				<h2>gallery</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=01" title="01">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=01">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=02" title="02">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=02">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=03" title="03">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=03">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=04" title="04">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=04">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=05" title="05">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=05">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=06">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=07">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=08" title="08">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=08">
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="youtube">
+				<h2>youtube</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a class="lightbox-youtube" href="https://www.youtube.com/watch?v=ysRIwlEBjuw">
+								<img src="http://img.youtube.com/vi/ysRIwlEBjuw/0.jpg" alt="サムネイル" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="googlemap">
+				<h2>googlemap (iframe)</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<a class="lightbox-googlemap" href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8914.752749448939!2d139.69967396300015!3d35.690515634467474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1c32a1f1ecacfdd5!2z5paw5a6_6aeF!5e0!3m2!1sja!2sjp!4v1469005122314">
+							googlemap
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section id="inline">
+				<h2>inline</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<a class="lightbox-inline" href="#inline-content">
+							inline
+						</a>
+						<div id="inline-content" class="mfp-hide">
+							<img src="http://placehold.it/600x600/cccccc/666.jpg">
+							<div class="modal-close"><a href="#">Close</a></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer>
+	</footer>
+</body>
+</html>
