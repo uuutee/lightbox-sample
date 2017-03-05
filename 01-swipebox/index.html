@@ -1,9 +1,7 @@
-<html>
-<head>
-<meta charset="utf-8">
-<title>lightbox samples</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<style>body{padding: 70px 0 120px;}</style>
+---
+layout: page
+title: Swipebox
+---
 
 <!-- swipebox-->
 <link rel="stylesheet" href="css/swipebox.css">
@@ -20,177 +18,170 @@ jQuery(document).ready(function($) {
 	$('.lightbox-inline').swipebox();
 });
 </script>
-</head>
-<body>
-	<main id="main">
-		<div class="container">
-			<h1>Swipebox</h1>
+<main id="main">
+	<div class="container">
+		<h1>{{ page.title }}</h1>
 
-			<section id="memo">
-				<h2>official</h2>
-				<ul>
-					<li><a href="http://brutaldesign.github.io/swipebox/">Swipebox.</a></li>
-				</ul>
-				<h2>memo</h2>
-				<ul>
-					<li>同じページ内で、normalとgalleryのclassを同時に指定できない。個別のclass指定が必要</li>
-					<li>画面外をクリックしても閉じられない。×をクリックしたときのみ閉じる。</li>
-					<li>relでグループ指定</li>
-					<li>youtubeのhrefは <code>https://www.youtube.com/embed/{id}</code> で指定</li>
-					<li>inlineおよびiframe表示使用不可？</li>
-				</ul>
-			</section>
+		<section id="memo">
+			<h2>official</h2>
+			<ul>
+				<li><a href="http://brutaldesign.github.io/swipebox/">Swipebox.</a></li>
+			</ul>
+			<h2>memo</h2>
+			<ul>
+				<li>同じページ内で、normalとgalleryのclassを同時に指定できない。個別のclass指定が必要</li>
+				<li>画面外をクリックしても閉じられない。×をクリックしたときのみ閉じる。</li>
+				<li>relでグループ指定</li>
+				<li>youtubeのhrefは <code>https://www.youtube.com/embed/{id}</code> で指定</li>
+				<li>inlineおよびiframe表示使用不可？</li>
+			</ul>
+		</section>
 
-			<section id="normal">
-				<h2>normal</h2>
-				<div class="row">
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox" href="http://placehold.it/1200x1200/cccccc/666.jpg">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg">
-							</a>
-						</div>
+		<section id="normal">
+			<h2>normal</h2>
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="thumbnail">
+						<a class="lightbox" href="http://placehold.it/1200x1200/cccccc/666.jpg">
+							<img src="http://placehold.it/300x300/cccccc/666.jpg">
+						</a>
 					</div>
 				</div>
+			</div>
 <pre>
 $('.lightbox').swipebox();
 </pre>
-			</section>
+		</section>
 
-			<section id="caption">
-				<h2>caption</h2>
-				<div class="row">
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-caption" href="http://placehold.it/500x500/cccccc/666.jpg" title="captionが入ります">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg">
-							</a>
-						</div>
+		<section id="caption">
+			<h2>caption</h2>
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="thumbnail">
+						<a class="lightbox-caption" href="http://placehold.it/500x500/cccccc/666.jpg" title="captionが入ります">
+							<img src="http://placehold.it/300x300/cccccc/666.jpg">
+						</a>
 					</div>
 				</div>
+			</div>
 <pre>
 $('.lightbox-caption').swipebox();
 </pre>
-			</section>
+		</section>
 
-			<section id="gallery">
-				<h2>gallery</h2>
-				<div class="row">
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=01" title="01">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=01">
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=02" title="02">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=02">
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=03" title="03">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=03">
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=04" title="04">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=04">
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=05" title="05">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=05">
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=06">
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=07">
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=08" title="08">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=08">
-							</a>
-						</div>
+		<section id="gallery">
+			<h2>gallery</h2>
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="thumbnail">
+						<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=01" title="01">
+							<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=01">
+						</a>
 					</div>
 				</div>
+				<div class="col-xs-3">
+					<div class="thumbnail">
+						<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=02" title="02">
+							<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=02">
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="thumbnail">
+						<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=03" title="03">
+							<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=03">
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="thumbnail">
+						<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=04" title="04">
+							<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=04">
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="thumbnail">
+						<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=05" title="05">
+							<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=05">
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="thumbnail">
+						<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
+							<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=06">
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="thumbnail">
+						<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
+							<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=07">
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="thumbnail">
+						<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=08" title="08">
+							<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=08">
+						</a>
+					</div>
+				</div>
+			</div>
 <pre>
 $('.lightbox-gallery').swipebox();
 </pre>
-			</section>
+		</section>
 
-			<section id="youtube">
-				<h2>youtube</h2>
-				<div class="row">
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-youtube" href="https://www.youtube.com/watch?v=ysRIwlEBjuw">
-								<img src="http://img.youtube.com/vi/ysRIwlEBjuw/0.jpg" alt="サムネイル" />
-							</a>
-						</div>
+		<section id="youtube">
+			<h2>youtube</h2>
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="thumbnail">
+						<a class="lightbox-youtube" href="https://www.youtube.com/watch?v=ysRIwlEBjuw">
+							<img src="http://img.youtube.com/vi/ysRIwlEBjuw/0.jpg" alt="サムネイル" />
+						</a>
 					</div>
 				</div>
+			</div>
 <pre>
 $('.lightbox-youtube').swipebox();
 </pre>
-			</section>
+		</section>
 
-			<section id="googlemap">
-				<h2>googlemap (iframe)</h2>
-				<div class="row">
-					<div class="col-xs-3">
-						<a class="lightbox-googlemap" href="#googlemap-content">
-							googlemap
-						</a>
-						<div id="googlemap-content" class="hidden">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8914.752749448939!2d139.69967396300015!3d35.690515634467474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1c32a1f1ecacfdd5!2z5paw5a6_6aeF!5e0!3m2!1sja!2sjp!4v1469005122314" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
-						</div>
+		<section id="googlemap">
+			<h2>googlemap (iframe)</h2>
+			<div class="row">
+				<div class="col-xs-3">
+					<a class="lightbox-googlemap" href="#googlemap-content">
+						googlemap
+					</a>
+					<div id="googlemap-content" class="hidden">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8914.752749448939!2d139.69967396300015!3d35.690515634467474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1c32a1f1ecacfdd5!2z5paw5a6_6aeF!5e0!3m2!1sja!2sjp!4v1469005122314" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 				</div>
+			</div>
 <pre>
 $('.lightbox-googlemap').swipebox();
 </pre>
-			</section>
+		</section>
 
-			<section id="inline">
-				<h2>inline</h2>
-				<div class="row">
-					<div class="col-xs-3">
-						<a class="lightbox-inline" href="#inline-content">
-							inline
-						</a>
-						<div id="inline-content" class="hidden">
-							<img src="http://placehold.it/600x600/cccccc/666.jpg">
-						</div>
+		<section id="inline">
+			<h2>inline</h2>
+			<div class="row">
+				<div class="col-xs-3">
+					<a class="lightbox-inline" href="#inline-content">
+						inline
+					</a>
+					<div id="inline-content" class="hidden">
+						<img src="http://placehold.it/600x600/cccccc/666.jpg">
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 <pre>
 $('.lightbox-inline').swipebox();
 </pre>
-		</div>
-	</main>
-
-	<footer>
-	</footer>
-</body>
-</html>
+	</div>
+</main>
