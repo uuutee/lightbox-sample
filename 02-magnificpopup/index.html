@@ -16,14 +16,14 @@ jQuery(document).ready(function($) {
 		type: 'image',
 		closeOnContentClick: true,
 		image: {
-			verticalFit: false
+			verticalFit: true
 		}
 	});
 	$('.lightbox-caption').magnificPopup({
 		type: 'image',
 		closeOnContentClick: true,
 		image: {
-			verticalFit: false
+			verticalFit: true
 		}
 	});
 	$('#gallery .row').magnificPopup({
@@ -107,7 +107,7 @@ $('.lightbox').magnificPopup({
 	type: 'image',
 	closeOnContentClick: true,
 	image: {
-		verticalFit: false
+		verticalFit: true
 	}
 });
 </pre>
@@ -129,7 +129,7 @@ $('.lightbox-caption').magnificPopup({
 	type: 'image',
 	closeOnContentClick: true,
 	image: {
-		verticalFit: false
+		verticalFit: true
 	}
 });
 </pre>
@@ -227,6 +227,15 @@ $('#gallery .row').magnificPopup({
 						</div>
 					</div>
 				</div>
+<pre>
+$('.lightbox-youtube').magnificPopup({
+	disableOn: 700,
+	type: 'iframe',
+	removalDelay: 160,
+	preloader: false,
+	fixedContentPos: true // trueにしないと下にずれる
+});
+</pre>
 			</section>
 
 			<section id="googlemap">
@@ -238,8 +247,18 @@ $('#gallery .row').magnificPopup({
 						</a>
 					</div>
 				</div>
-			</section>
+<pre>
+$('.lightbox-googlemap').magnificPopup({
+	disableOn: 700,
+	type: 'iframe',
+	removalDelay: 160,
+	preloader: false,
+	fixedContentPos: true // trueにしないと下にずれる
+});
+</pre>
 
+			</section>
+	
 			<section id="inline">
 				<h2>inline</h2>
 				<div class="row">
@@ -254,6 +273,18 @@ $('#gallery .row').magnificPopup({
 					</div>
 				</div>
 			</section>
+
+<pre>
+$('.lightbox-inline').magnificPopup({
+	type: 'inline',
+	preloader: false,
+	modal: true
+});
+$(document).on('click', '.modal-close', function(e) {
+	e.preventDefault();
+	$.magnificPopup.close();
+});
+</pre>
 		</div>
 	</main>
 
