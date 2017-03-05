@@ -16,14 +16,12 @@
 title: lightbox samples
 description: > # this means to ignore newlines until "baseurl:"
   lightbox scripts samples.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: /lightbox-sample # github pages向け設定
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: uuutee
 github_username:  uuutee
 
 # Build settings
-markdown: kramdown
-theme: minima
 gems:
   - jekyll-feed
 exclude:
