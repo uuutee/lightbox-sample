@@ -1,0 +1,163 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>lightbox samples</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<style>body{padding: 70px 0 120px;}</style>
+
+<!-- lightbox2-->
+<link rel="stylesheet" type="text/css" href="css/lightbox.css">
+<script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/lightbox.js"></script>
+
+
+</head>
+<body>
+	<main id="main">
+		<div class="container">
+			<h1>lightbox2</h1>
+
+			<section id="memo">
+				<h2>documents</h2>
+				<ul>
+				</ul>
+				<h2>memo</h2>
+				<ul>
+					<li>data-lightbox属性を指定するだけ。class指定不要</li>
+					<li>youtubeやgooglemapなどのiframeは非対応</li>
+				</ul>
+			</section>
+
+			<section id="normal">
+				<h2>normal</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a data-lightbox="example-1" href="http://placehold.it/1200x1200/cccccc/666.jpg">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg">
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="caption">
+				<h2>caption</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a data-lightbox="example-2" href="http://placehold.it/500x500/cccccc/666.jpg" data-title="captionが入ります">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg">
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="gallery">
+				<h2>gallery</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a data-lightbox="lightbox-gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=01" title="01">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=01">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a data-lightbox="lightbox-gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=02" title="02">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=02">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a data-lightbox="lightbox-gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=03" title="03">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=03">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a data-lightbox="lightbox-gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=04" title="04">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=04">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a data-lightbox="lightbox-gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=05" title="05">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=05">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a data-lightbox="lightbox-gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=06">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a data-lightbox="lightbox-gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=07">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a data-lightbox="lightbox-gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=08" title="08">
+								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=08">
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="youtube">
+				<h2>youtube</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="thumbnail">
+							<a data-lightbox="lightbox-youtube" href="https://www.youtube.com/watch?v=ysRIwlEBjuw">
+								<img src="http://img.youtube.com/vi/ysRIwlEBjuw/0.jpg" alt="サムネイル" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="googlemap">
+				<h2>googlemap (iframe)</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<a data-lightbox="lightbox-googlemap" href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8914.752749448939!2d139.69967396300015!3d35.690515634467474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1c32a1f1ecacfdd5!2z5paw5a6_6aeF!5e0!3m2!1sja!2sjp!4v1469005122314">
+							googlemap
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section id="inline">
+				<h2>inline</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<a data-lightbox="lightbox-inline" href="#inline-content">
+							inline
+						</a>
+						<div id="inline-content" class="mfp-hide">
+							<img src="http://placehold.it/600x600/cccccc/666.jpg">
+							<div class="modal-close"><a href="#">Close</a></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer>
+	</footer>
+</body>
+</html>
