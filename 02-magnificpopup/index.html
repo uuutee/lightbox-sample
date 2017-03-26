@@ -3,7 +3,7 @@ layout: page
 title: magnific-popup
 ---
 <!-- magnific-popup-->
-<script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="js/jquery.magnific-popup.js"></script>
 <link rel="stylesheet" href="css/magnific-popup.css" />
 
@@ -57,7 +57,7 @@ jQuery(document).ready(function($) {
 	$('.lightbox-inline').magnificPopup({
 		type: 'inline',
 		preloader: false,
-		modal: true
+		modal: true,
 	});
 	$(document).on('click', '.modal-close', function(e) {
 		e.preventDefault();
@@ -70,17 +70,21 @@ jQuery(document).ready(function($) {
 			<h1>Magnific Popup</h1>
 
 			<section id="memo">
-				<h2>official</h2>
+				<h2>documents</h2>
 				<ul>
 					<li><a href="http://dimsemenov.com/plugins/magnific-popup/">Magnific Popup: Responsive jQuery Lightbox Plugin</a></li>
 				</ul>
 				<h2>memo</h2>
+				<h3>pros</h3>
+				<ul>
+					<li>グルーピングは親要素のclassを指定する</li>
+					<li>googlemapはiframeのsrcを指定する</li>
+				</ul>
+				<h3>cons</h3>
 				<ul>
 					<li>windowをはみでた画像はリサイズされず、スクロールする</li>
-					<li>グルーピングは親要素のclassを指定する</li>
 					<li>全体的に設定が複雑なので、動きごとに個別のjs指定が必要</li>
 					<li>アニメーションがしょぼい</li>
-					<li>googlemapはiframeのsrcを指定する</li>
 					<li>inlineがなぜか左寄り</li>
 					<li>inlineはcloseボタンを設置しないと閉じられない</li>
 				</ul>
@@ -90,11 +94,9 @@ jQuery(document).ready(function($) {
 				<h2>normal</h2>
 				<div class="row">
 					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox" href="http://placehold.it/1200x1200/cccccc/666.jpg">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg">
-							</a>
-						</div>
+						<a class="lightbox" href="https://placehold.it/1200x1200/cccccc/666.jpg">
+							<img src="https://placehold.it/100x100/cccccc/666.jpg" class="thumbnail">
+						</a>
 					</div>
 				</div>
 <pre>
@@ -112,11 +114,9 @@ $('.lightbox').magnificPopup({
 				<h2>caption</h2>
 				<div class="row">
 					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-caption" href="http://placehold.it/500x500/cccccc/666.jpg" title="captionが入ります">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg">
-							</a>
-						</div>
+						<a class="lightbox-caption" href="https://placehold.it/500x500/cccccc/666.jpg" title="captionが入ります">
+							<img src="https://placehold.it/100x100/cccccc/666.jpg" class="thumbnail">
+						</a>
 					</div>
 				</div>
 <pre>
@@ -133,61 +133,35 @@ $('.lightbox-caption').magnificPopup({
 			<section id="gallery">
 				<h2>gallery</h2>
 				<div class="row">
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=01" title="01">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=01">
-							</a>
-						</div>
+					<div class="col-xs-2">
+						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=01" title="01">
+							<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=01" class="thumbnail">
+						</a>
 					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=02" title="02">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=02">
-							</a>
-						</div>
+					<div class="col-xs-2">
+						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=02" title="02">
+							<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=02" class="thumbnail">
+						</a>
 					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=03" title="03">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=03">
-							</a>
-						</div>
+					<div class="col-xs-2">
+						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=03" title="03">
+							<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=03" class="thumbnail">
+						</a>
 					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=04" title="04">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=04">
-							</a>
-						</div>
+					<div class="col-xs-2">
+						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=04" title="04">
+							<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=04" class="thumbnail">
+						</a>
 					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=05" title="05">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=05">
-							</a>
-						</div>
+					<div class="col-xs-2">
+						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=05" title="05">
+							<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=05" class="thumbnail">
+						</a>
 					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=06">
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=07">
-							</a>
-						</div>
-					</div>
-					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-gallery" rel="gallery" href="http://placehold.it/500x500/cccccc/666.jpg&amp;text=08" title="08">
-								<img src="http://placehold.it/300x300/cccccc/666.jpg&amp;text=08">
-							</a>
-						</div>
+					<div class="col-xs-2">
+						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
+							<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=06" class="thumbnail">
+						</a>
 					</div>
 				</div>
 <pre>
@@ -215,11 +189,9 @@ $('#gallery .row').magnificPopup({
 				<h2>youtube</h2>
 				<div class="row">
 					<div class="col-xs-3">
-						<div class="thumbnail">
-							<a class="lightbox-youtube" href="https://www.youtube.com/watch?v=ysRIwlEBjuw">
-								<img src="http://img.youtube.com/vi/ysRIwlEBjuw/0.jpg" alt="サムネイル" />
-							</a>
-						</div>
+						<a class="lightbox-youtube" href="https://www.youtube.com/watch?v=ysRIwlEBjuw">
+							<img src="https://img.youtube.com/vi/ysRIwlEBjuw/0.jpg" alt="サムネイル" width="200" class="thumbnail" />
+						</a>
 					</div>
 				</div>
 <pre>
@@ -262,7 +234,7 @@ $('.lightbox-googlemap').magnificPopup({
 							inline
 						</a>
 						<div id="inline-content" class="mfp-hide">
-							<img src="http://placehold.it/600x600/cccccc/666.jpg">
+							<img src="https://placehold.it/600x600/cccccc/666.jpg">
 							<div class="modal-close"><a href="#">Close</a></div>
 						</div>
 					</div>
