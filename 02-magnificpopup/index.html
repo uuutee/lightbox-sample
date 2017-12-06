@@ -2,6 +2,7 @@
 layout: page
 title: magnific-popup
 ---
+<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- magnific-popup-->
 <script type="text/javascript" charset="utf-8" src="js/jquery.magnific-popup.js"></script>
 <link rel="stylesheet" href="css/magnific-popup.css" />
@@ -73,13 +74,13 @@ jQuery(document).ready(function($) {
 				<ul>
 					<li><a href="http://dimsemenov.com/plugins/magnific-popup/">Magnific Popup: Responsive jQuery Lightbox Plugin</a></li>
 				</ul>
-				<h2>memo</h2>
-				<h3>pros</h3>
+
+				<h2>pros</h2>
 				<ul>
 					<li>グルーピングは親要素のclassを指定する</li>
 					<li>googlemapはiframeのsrcを指定する</li>
 				</ul>
-				<h3>cons</h3>
+				<h2>cons</h2>
 				<ul>
 					<li>windowをはみでた画像はリサイズされず、スクロールする</li>
 					<li>全体的に設定が複雑なので、動きごとに個別のjs指定が必要</li>
@@ -92,143 +93,65 @@ jQuery(document).ready(function($) {
 			<section id="normal">
 				<h2>normal</h2>
 				<div class="row">
-					<div class="col-xs-3">
-						<a class="lightbox" href="https://placehold.it/1200x1200/cccccc/666.jpg">
-							<img src="https://placehold.it/100x100/cccccc/666.jpg" class="thumbnail">
+					<div class="col-sm-3">
+						<a class="lightbox" href="https://placehold.it/1920x1080/cccccc/666.jpg">
+							<img src="https://placehold.it/600x600/cccccc/666.jpg" class="mw-100">
 						</a>
 					</div>
 				</div>
-<pre>
-$('.lightbox').magnificPopup({
-	type: 'image',
-	closeOnContentClick: true,
-	image: {
-		verticalFit: true
-	}
-});
-</pre>
 			</section>
 
 			<section id="caption">
 				<h2>caption</h2>
 				<div class="row">
-					<div class="col-xs-3">
-						<a class="lightbox-caption" href="https://placehold.it/500x500/cccccc/666.jpg" title="captionが入ります">
-							<img src="https://placehold.it/100x100/cccccc/666.jpg" class="thumbnail">
+					<div class="col-sm-3">
+						<a class="lightbox-caption" href="https://placehold.it/600x600/cccccc/666.jpg" title="captionが入ります">
+							<img src="https://placehold.it/600x600/cccccc/666.jpg" class="mw-100">
 						</a>
 					</div>
 				</div>
-<pre>
-$('.lightbox-caption').magnificPopup({
-	type: 'image',
-	closeOnContentClick: true,
-	image: {
-		verticalFit: true
-	}
-});
-</pre>
 			</section>
 
 			<section id="gallery">
 				<h2>gallery</h2>
 				<div class="row">
-					<div class="col-sm-2 col-xs-4">
-						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=01" title="01">
-							<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=01" class="thumbnail">
-						</a>
-					</div>
-					<div class="col-sm-2 col-xs-4">
-						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=02" title="02">
-							<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=02" class="thumbnail">
-						</a>
-					</div>
-					<div class="col-sm-2 col-xs-4">
-						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=03" title="03">
-							<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=03" class="thumbnail">
-						</a>
-					</div>
-					<div class="col-sm-2 col-xs-4">
-						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=04" title="04">
-							<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=04" class="thumbnail">
-						</a>
-					</div>
-					<div class="col-sm-2 col-xs-4">
-						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=05" title="05">
-							<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=05" class="thumbnail">
-						</a>
-					</div>
-					<div class="col-sm-2 col-xs-4">
-						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
-							<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=06" class="thumbnail">
-						</a>
-					</div>
+					{% for i in (1..8) %}
+						<div class="col-sm-3 col-4 mb-4">
+							<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/600x600/cccccc/666.jpg&amp;text={{ i }}" title="{{ i }}">
+								<img src="https://placehold.it/600x600/cccccc/666.jpg&amp;text={{ i }}" class="mw-100">
+							</a>
+						</div>
+					{% endfor %}
 				</div>
-<pre>
-$('#gallery .row').magnificPopup({
-	delegate: 'a',
-	type: 'image',
-	tLoading: 'Loading image #%curr%...',
-	gallery: {
-		enabled: true,
-		navigateByImgClick: true,
-		preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-	},
-	image: {
-		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-		// titleに一括で追加タグ指定可能
-		// titleSrc: function(item) {
-		// 	return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
-		// }
-	}
-});
-</pre>
 			</section>
 
 			<section id="youtube">
 				<h2>youtube</h2>
 				<div class="row">
-					<div class="col-xs-3">
-						<a class="lightbox-youtube" href="https://www.youtube.com/watch?v=ysRIwlEBjuw">
-							<img src="https://img.youtube.com/vi/ysRIwlEBjuw/0.jpg" alt="サムネイル" width="200" class="thumbnail" />
+					<div class="col-sm-3">
+						<a class="lightbox-youtube" href="https://www.youtube.com/watch?v={{ site.placeholder.youtube[0] }}">
+							<img src="https://img.youtube.com/vi/{{ site.placeholder.youtube[0] }}/0.jpg" alt="サムネイル" width="200" class="mw-100" />
 						</a>
 					</div>
 				</div>
-<pre>
-$('.lightbox-youtube').magnificPopup({
-	disableOn: 700,
-	type: 'iframe',
-	removalDelay: 160,
-	preloader: false,
-	fixedContentPos: true // trueにしないと下にずれる
-});
-</pre>
 			</section>
 
 			<section id="googlemap">
 				<h2>googlemap (iframe)</h2>
 				<div class="row">
-					<div class="col-xs-3">
-						<a class="lightbox-googlemap" href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8914.752749448939!2d139.69967396300015!3d35.690515634467474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1c32a1f1ecacfdd5!2z5paw5a6_6aeF!5e0!3m2!1sja!2sjp!4v1469005122314">
+					<div class="col-sm-3">
+						<a class="lightbox-googlemap" href="{{ site.placeholder.googlemap[0] }}">
 							googlemap
 						</a>
 					</div>
 				</div>
-<pre>
-$('.lightbox-googlemap').magnificPopup({
-	disableOn: 700,
-	type: 'iframe',
-	removalDelay: 160,
-	preloader: false,
-	fixedContentPos: true // trueにしないと下にずれる
-});
-</pre>
 
 			</section>
 	
 			<section id="inline">
 				<h2>inline</h2>
 				<div class="row">
-					<div class="col-xs-3">
+					<div class="col-sm-3">
 						<a class="lightbox-inline" href="#inline-content">
 							inline
 						</a>
@@ -239,17 +162,5 @@ $('.lightbox-googlemap').magnificPopup({
 					</div>
 				</div>
 			</section>
-
-<pre>
-$('.lightbox-inline').magnificPopup({
-	type: 'inline',
-	preloader: false,
-	modal: true
-});
-$(document).on('click', '.modal-close', function(e) {
-	e.preventDefault();
-	$.magnificPopup.close();
-});
-</pre>
 		</div>
 	</main>

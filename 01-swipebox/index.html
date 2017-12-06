@@ -3,6 +3,7 @@ layout: page
 title: Swipebox
 ---
 
+<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
 <!-- swipebox-->
 <link rel="stylesheet" href="css/swipebox.css">
 <script src="js/jquery.swipebox.js"></script>
@@ -26,14 +27,15 @@ title: Swipebox
 			<ul>
 				<li><a href="https://brutaldesign.github.io/swipebox/">Swipebox.</a></li>
 			</ul>
-			<h2>memo</h2>
-			<h3>pros</h3>
+
+			<h2>pros</h2>
 			<ul>
 				<li>relでグループ指定</li>
 				<li>youtubeのhrefは <code>https://www.youtube.com/embed/{id}</code> で指定</li>
 			</ul>
-			<h3>cons</h3>
+			<h2>cons</h2>
 			<ul>
+				<li>jQuery3以降で動作しない</li>
 				<li>画面外をクリックしても閉じられない。×をクリックしたときのみ閉じる。</li>
 				<li>同じページ内で、normalとgalleryのclassを同時に指定できない。個別のclass指定が必要</li>
 				<li>inlineおよびiframe表示使用不可？</li>
@@ -43,116 +45,75 @@ title: Swipebox
 		<section id="normal">
 			<h2>normal</h2>
 			<div class="row">
-				<div class="col-xs-3">
-					<a class="lightbox" href="https://placehold.it/1200x1200/cccccc/666.jpg">
-						<img src="https://placehold.it/100x100/cccccc/666.jpg" class="thumbnail">
+				<div class="col-sm-3">
+					<a class="lightbox" href="https://placehold.it/1920x1080/cccccc/666.jpg">
+						<img src="https://placehold.it/600x600/cccccc/666.jpg" class="mw-100">
 					</a>
 				</div>
 			</div>
-<pre>
-$('.lightbox').swipebox();
-</pre>
 		</section>
 
 		<section id="caption">
 			<h2>caption</h2>
 			<div class="row">
-				<div class="col-xs-3">
-					<a class="lightbox-caption" href="https://placehold.it/500x500/cccccc/666.jpg" title="captionが入ります">
-						<img src="https://placehold.it/100x100/cccccc/666.jpg" class="thumbnail">
+				<div class="col-sm-3">
+					<a class="lightbox-caption" href="https://placehold.it/600x600/cccccc/666.jpg" title="captionが入ります">
+						<img src="https://placehold.it/600x600/cccccc/666.jpg" class="mw-100">
 					</a>
 				</div>
 			</div>
-<pre>
-$('.lightbox-caption').swipebox();
-</pre>
 		</section>
 
 		<section id="gallery">
 			<h2>gallery</h2>
 			<div class="row">
-				<div class="col-sm-2 col-xs-4">
-					<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=01" title="01">
-						<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=01" class="thumbnail">
-					</a>
-				</div>
-				<div class="col-sm-2 col-xs-4">
-					<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=02" title="02">
-						<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=02" class="thumbnail">
-					</a>
-				</div>
-				<div class="col-sm-2 col-xs-4">
-					<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=03" title="03">
-						<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=03" class="thumbnail">
-					</a>
-				</div>
-				<div class="col-sm-2 col-xs-4">
-					<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=04" title="04">
-						<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=04" class="thumbnail">
-					</a>
-				</div>
-				<div class="col-sm-2 col-xs-4">
-					<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=05" title="05">
-						<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=05" class="thumbnail">
-					</a>
-				</div>
-				<div class="col-sm-2 col-xs-4">
-					<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/500x500/cccccc/666.jpg&amp;text=06" title="06">
-						<img src="https://placehold.it/100x100/cccccc/666.jpg&amp;text=06" class="thumbnail">
-					</a>
-				</div>
+				{% for i in (1..8) %}
+					<div class="col-sm-3 col-4 mb-4">
+						<a class="lightbox-gallery" rel="gallery" href="https://placehold.it/600x600/cccccc/666.jpg&amp;text={{ i }}" title="{{ i }}">
+							<img src="https://placehold.it/600x600/cccccc/666.jpg&amp;text={{ i }}" class="mw-100">
+						</a>
+					</div>
+				{% endfor %}
 			</div>
-<pre>
-$('.lightbox-gallery').swipebox();
-</pre>
 		</section>
 
 		<section id="youtube">
 			<h2>youtube</h2>
 			<div class="row">
-				<div class="col-sm-2 col-xs-4">
-					<a class="lightbox-youtube" href="https://www.youtube.com/watch?v=ysRIwlEBjuw">
-						<img src="https://img.youtube.com/vi/ysRIwlEBjuw/0.jpg" alt="サムネイル" width="200" class="thumbnail">
+				<div class="col-sm-3">
+					<a class="lightbox-youtube" href="https://www.youtube.com/watch?v={{ site.placeholder.youtube[0] }}">
+						<img src="https://img.youtube.com/vi/{{ site.placeholder.youtube[0] }}/0.jpg" alt="サムネイル" width="200" class="mw-100">
 					</a>
 				</div>
 			</div>
-<pre>
-$('.lightbox-youtube').swipebox();
-</pre>
 		</section>
 
 		<section id="googlemap">
 			<h2>googlemap (iframe)</h2>
 			<div class="row">
-				<div class="col-xs-3">
+				<div class="col-sm-3">
 					<a class="lightbox-googlemap" href="#googlemap-content">
 						googlemap
 					</a>
-					<div id="googlemap-content" class="hidden">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8914.752749448939!2d139.69967396300015!3d35.690515634467474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1c32a1f1ecacfdd5!2z5paw5a6_6aeF!5e0!3m2!1sja!2sjp!4v1469005122314" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<div id="googlemap-content" style="display: none;">
+						<iframe src="{{ site.placeholder.googlemap[0] }}" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
-<pre>
-$('.lightbox-googlemap').swipebox();
-</pre>
 		</section>
 
 		<section id="inline">
 			<h2>inline contents</h2>
 			<div class="row">
-				<div class="col-xs-3">
+				<div class="col-sm-3">
 					<a class="lightbox-inline" href="#inline-content">
 						inline
 					</a>
-					<div id="inline-content" class="hidden">
-						<img src="https://placehold.it/600x600/cccccc/666.jpg" class="thumbnail">
+					<div id="inline-content" style="display: none;">
+						<img src="https://placehold.it/600x600/cccccc/666.jpg" class="mw-100">
 					</div>
 				</div>
 			</div>
 		</section>
-<pre>
-$('.lightbox-inline').swipebox();
-</pre>
 	</div>
 </main>
